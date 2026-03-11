@@ -1,0 +1,26 @@
+layer,n_neurons,visible,tab,segmentQuery,bodyId_preview,notes
+manc-seg-v1.2-4B-all,97,True,segments,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS,"10024,100339,100525,101447,101453,102138,102536,10314,11143,12523,13128,13409,13436,13455,13506,13589,13770,13798,13975,14024","query: All 4B neurons selected by #hemilineage, soma side and thoracic level"
+manc-seg-v1.21- secondary n=73,73,False,rendering,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:secondary,"10024,100339,100525,101447,102138,102536,13128,13409,13455,13506,13589,13770,13798,13975,14024,14031,14697,14728,14774,14954",Secondary birthtime 4B neurons (query-derived)
+nerves,35,False,segments,,"1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27",Anatomical context layer showing nerve ROIs
+neuropils,24,True,segments,,"10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,4,5",Neuropil segmentation for spatial orientation
+manc-seg-v1.22-4B-early secondary n= 20,20,False,rendering,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:early_secondary,"101453,10314,14389,15002,15309,155236,15811,15969,162540,16757,17351,17490,17572,17678,18785,18831,19912,20077,21567,21956",Early secondary 4B neurons (query-derived)
+manc-seg-v1.2 4B manual BR-2 n=10,10,False,rendering,12523 162540 16527 10024 16487 17351 17409 18571 17534 101447,"10024,101447,12523,162540,16487,16527,17351,17409,17534,18571",Manual morphology review group BR-2
+manc-seg-v1.2-4B-subbclass BI n=4,10,False,rendering,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:BI,"10314,11143,13436,14031,15393,15401,15969,16293,17395,19912",Subclass BI 4B neurons (query-derived)
+court et al. tracts,7,True,rendering,,"100,101,102,103,104,105,106",Published tract annotations (context only)
+manc-seg-v1.2 4B manual IR nomorphology assigned secondary,7,True,segments,,"164146,18156,22868,23716,26941,27760,38071","IR group, no morphology assigned, secondary, (filter query by birth order)"
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,7,False,segments,20077 21567 17567 18156 101453 17572 18785,"101453,17567,17572,18156,18785,20077,21567","IR group, no morphology assigned, early secondary, "
+manc-seg-v1.2 4B manual BR-1 n=6,6,False,source,13455 13506 13589 14728 14774 15005,"13455,13506,13589,14728,14774,15005",
+manc-seg-v1.2 4b-manual BR-4 n=6,6,False,rendering,", 18148 19250 19366 , , 15309, 152244 21956","152244,15309,18148,19250,19366,21956",Manual morphology group BR-4 (manual morphology review within query-derived BR group)
+manc-seg-v1.21-4B-subclassBR n=26,6,False,segments,#hemilineage:04B #somaSide:LHS #somaNeuromere:T1 #subclass:BR,"152244,15309,18148,19250,19366,21956","All BR subclass neurons, (query-derived)"
+manc-seg-v1.2 4B manual IR-independent leg n=11,4,False,source,16224 20836 100339 18831 26388 21808 20932 36722 158391 23790 20585,"100339,16224,20836,26388","IR neurons independent of leg motor pools, (query-derived)"
+manc-seg-v1.2 4B manual BR-3 n=4,4,False,segments," , 155236 164102 15002,  18755,","15002,155236,164102,18755","Manual morphology group BR-3,(manual morphology review within query-derived BR group)"
+manc-seg-v1.2 4B- primary  n=4,4,False,segments,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:primary,"11143,12523,13436,17395","Primary birthtime 4B neurons, (filter query birth order)"
+manc-seg-v1.22-4B subclass IA=4,4,False,segments,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:IA,"10314,13436,17395,19912",Subclass IA neurons (query-derived)
+manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3,3,False,source,21862 152655 166421,"152655,166421,21862","IR proprioceptive/tactile subtype, (manual morphology review filter by query subtype"
+manc:v1.2.1-TTMn,1,False,source,//./ #class:Sensory_TBD |PreSyn |PostSyn,10068,TT motor neuron segmentation reference
+all-synaptic,1,True,rendering,,1,All synaptic neuropil regions (context only)
+all-tissue,1,False,source,,1,Whole tissue segmentation (context only)
+manc-seg-v1.2-4B-sublass IR n=60,1,False,segments,,13409,"All IR subclass neurons, (query-derived)"
+manc-seg-v1.21-4B subclass BA n=1,1,False,segments,#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:BA,17490,"BA subclass neuron, (query-derived)"
+voxel-classes,0,True,segments,,,Voxel classification layer (technical)
+initial-supervoxels,0,True,segments,,,Initial segmentation supervoxels (technical)

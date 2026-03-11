@@ -1,0 +1,940 @@
+{
+  "title": "4B analysis + manual IR layers",
+  "dimensions": {
+    "x": [
+      8e-09,
+      "m"
+    ],
+    "y": [
+      8e-09,
+      "m"
+    ],
+    "z": [
+      8e-09,
+      "m"
+    ]
+  },
+  "position": [
+    15353.5,
+    35844.5,
+    53248.5
+  ],
+  "crossSectionOrientation": [
+    0,
+    0.7071067690849304,
+    -0.7071067690849304,
+    0
+  ],
+  "crossSectionScale": 1,
+  "projectionOrientation": [
+    -0.29617950320243835,
+    0.698911726474762,
+    -0.6356714367866516,
+    0.14043490588665009
+  ],
+  "projectionScale": 26672.2540375702,
+  "layers": [
+    {
+      "type": "image",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-2-26-213dba213ef26e094c16c860ae7f4be0/v3_emdata_clahe_xy/jpeg",
+        "subsources": {
+          "default": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "source",
+      "name": "em"
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "toolBindings": {
+        "Q": "selectSegments"
+      },
+      "tab": "source",
+      "selectedAlpha": 0.34,
+      "saturation": 0.49,
+      "ignoreNullVisibleSet": false,
+      "segments": [
+        "10068"
+      ],
+      "segmentQuery": "//./ #class:Sensory_TBD |PreSyn |PostSyn",
+      "segmentDefaultColor": "#00ff80",
+      "segmentColors": {
+        "33946": "#808080"
+      },
+      "name": "manc:v1.2.1-TTMn",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-roi-d5f392696f7a48e27f49fa1a9db5ee3b/all-vnc-roi",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "pick": false,
+      "tab": "source",
+      "annotationColor": "#37c842",
+      "selectedAlpha": 0,
+      "saturation": 0,
+      "meshSilhouetteRendering": 4,
+      "segments": [
+        "1"
+      ],
+      "segmentDefaultColor": "#ffffff",
+      "name": "all-tissue",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-roi-d5f392696f7a48e27f49fa1a9db5ee3b/synaptic-neuropil",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "pick": false,
+      "tab": "rendering",
+      "selectedAlpha": 0,
+      "saturation": 0,
+      "meshSilhouetteRendering": 4,
+      "segments": [
+        "1"
+      ],
+      "segmentDefaultColor": "#ffffff",
+      "segmentColors": {
+        "1": "#ffffff"
+      },
+      "name": "all-synaptic",
+      "archived": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-roi-d5f392696f7a48e27f49fa1a9db5ee3b/roi-202208",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "pick": false,
+      "tab": "segments",
+      "selectedAlpha": 0,
+      "saturation": 0.5,
+      "meshSilhouetteRendering": 4,
+      "segments": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "name": "neuropils"
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-roi-d5f392696f7a48e27f49fa1a9db5ee3b/nerve-roi-202301",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "pick": false,
+      "tab": "segments",
+      "objectAlpha": 0.1,
+      "segments": [
+        "1",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "2",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "3",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "name": "nerves",
+      "visible": false
+    },
+    {
+      "type": "annotation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-v1.2-synapse-partners-minconf-0.0.precomputed",
+      "tab": "rendering",
+      "ignoreNullSegmentFilter": false,
+      "shader": "#uicontrol bool showPre checkbox(default=true)\n#uicontrol bool showPostPartners checkbox(default=true)\n\n#uicontrol vec3 preColor color(default=\"red\")\n#uicontrol vec3 postColor color(default=\"blue\")\n\n// Note:\n//   For the MANC in neuprint,\n//   connection strengths don't\n//   include any synapses below\n//   confidence 0.4.\n#uicontrol float preConfidence slider(min=0, max=1, default=0)\n#uicontrol float postConfidence slider(min=0, max=1, default=0)\n\nvoid main() {\n  setColor(defaultColor());\n\n  float preSize = 6.0;\n  float postSize = 4.0;\n  \n  setEndpointMarkerColor(\n    vec4(preColor, 0.5),\n    vec4(postColor, 0.5));\n  \n  if (showPre && showPostPartners) {\n    setLineWidth(1.0);\n    setEndpointMarkerSize(preSize, postSize);\n  }\n  else if (showPostPartners) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, postSize);\n  }\n  else if (showPre) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(preSize, 0.0);\n  }\n  else {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, 0.0);\n  }\n  \n  if (prop_pre_synaptic_confidence() < preConfidence ||\n      prop_post_synaptic_confidence() < postConfidence) discard;\n}\n",
+      "shaderControls": {
+        "showPostPartners": false,
+        "postColor": "#00ffff",
+        "preConfidence": 0.4,
+        "postConfidence": 0.4
+      },
+      "linkedSegmentationLayer": {
+        "pre_synaptic_cell": "manc:v1.2.1-TTMn"
+      },
+      "filterBySegmentation": [
+        "pre_synaptic_cell"
+      ],
+      "name": "presyn",
+      "visible": false
+    },
+    {
+      "type": "annotation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-v1.2-synapse-partners-minconf-0.0.precomputed",
+      "tab": "rendering",
+      "ignoreNullSegmentFilter": false,
+      "shader": "#uicontrol bool showPrePartners checkbox(default=true)\n#uicontrol bool showPost checkbox(default=true)\n\n#uicontrol vec3 preColor color(default=\"red\")\n#uicontrol vec3 postColor color(default=\"blue\")\n\n// Note:\n//   For the MANC in neuprint,\n//   connection strengths don't\n//   include any synapses below\n//   confidence 0.4.\n#uicontrol float preConfidence slider(min=0, max=1, default=0.4)\n#uicontrol float postConfidence slider(min=0, max=1, default=0.4)\n\nvoid main() {\n  setColor(defaultColor());\n\n  float preSize = 6.0;\n  float postSize = 4.0;\n  \n  setEndpointMarkerColor(\n    vec4(preColor, 0.5),\n    vec4(postColor, 0.5));\n  \n  if (showPrePartners && showPost) {\n    setLineWidth(1.0);\n    setEndpointMarkerSize(preSize, postSize);\n  }\n  else if (showPost) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, postSize);\n  }\n  else if (showPrePartners) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(preSize, 0.0);\n  }\n  else {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, 0.0);\n  }\n  \n  if (prop_pre_synaptic_confidence() < preConfidence ||\n      prop_post_synaptic_confidence() < postConfidence) discard;\n}\n",
+      "shaderControls": {
+        "showPrePartners": false,
+        "postColor": "#00ffff"
+      },
+      "linkedSegmentationLayer": {
+        "post_synaptic_cell": "manc:v1.2.1-TTMn"
+      },
+      "filterBySegmentation": [
+        "post_synaptic_cell"
+      ],
+      "name": "postsyn",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://vnc-v3-seg-3d2f1c08fd4720848061f77362dc6c17/mask",
+        "subsources": {
+          "default": true,
+          "properties": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "pick": false,
+      "tab": "segments",
+      "segmentColors": {
+        "1": "#000000"
+      },
+      "name": "voxel-classes",
+      "archived": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://vnc-v3-seg-3d2f1c08fd4720848061f77362dc6c17/rc5_wsexp",
+        "subsources": {
+          "default": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "segments",
+      "name": "initial-supervoxels",
+      "archived": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-roi-d5f392696f7a48e27f49fa1a9db5ee3b/court-et-al-systematic-manc_tracts/mesh",
+        "subsources": {
+          "default": true,
+          "properties": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "rendering",
+      "saturation": 0.5,
+      "meshSilhouetteRendering": 4,
+      "segments": [
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "name": "court et al. tracts",
+      "archived": true
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "objectAlpha": 0.03,
+      "hideSegmentZero": false,
+      "segments": [
+        "10024",
+        "100339",
+        "100525",
+        "101447",
+        "101453",
+        "102138",
+        "102536",
+        "10314",
+        "11143",
+        "12523",
+        "13128",
+        "13409",
+        "13436",
+        "13455",
+        "13506",
+        "13589",
+        "13770",
+        "13798",
+        "13975",
+        "14024",
+        "14031",
+        "14389",
+        "14697",
+        "14728",
+        "14774",
+        "14954",
+        "15002",
+        "15005",
+        "152244",
+        "152655",
+        "15309",
+        "153878",
+        "15393",
+        "15401",
+        "155236",
+        "15811",
+        "158391",
+        "15969",
+        "16224",
+        "162540",
+        "16293",
+        "164102",
+        "164146",
+        "16487",
+        "16527",
+        "165318",
+        "166421",
+        "16757",
+        "17351",
+        "17395",
+        "17409",
+        "17490",
+        "17534",
+        "17567",
+        "17572",
+        "17678",
+        "17935",
+        "18148",
+        "18156",
+        "18253",
+        "18571",
+        "18605",
+        "18629",
+        "18641",
+        "18724",
+        "18755",
+        "18785",
+        "18831",
+        "18990",
+        "19250",
+        "19366",
+        "19833",
+        "19912",
+        "19985",
+        "20077",
+        "20585",
+        "20836",
+        "20932",
+        "21189",
+        "21322",
+        "21499",
+        "21567",
+        "21808",
+        "21862",
+        "21956",
+        "22163",
+        "22868",
+        "22997",
+        "23716",
+        "23790",
+        "24181",
+        "26388",
+        "26941",
+        "27760",
+        "29988",
+        "36722",
+        "38071"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS",
+      "segmentDefaultColor": "#e9e2e2",
+      "name": "manc-seg-v1.2-4B-all"
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "objectAlpha": 0.18,
+      "segments": [
+        "152244",
+        "15309",
+        "18148",
+        "19250",
+        "19366",
+        "21956"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaSide:LHS #somaNeuromere:T1 #subclass:BR",
+      "segmentDefaultColor": "#ff0000",
+      "name": "manc-seg-v1.21-4B-subclassBR n=26",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "rendering",
+      "selectedAlpha": 0.4,
+      "objectAlpha": 0.47,
+      "segments": [
+        "10314",
+        "11143",
+        "13436",
+        "14031",
+        "15393",
+        "15401",
+        "15969",
+        "16293",
+        "17395",
+        "19912"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:BI",
+      "segmentDefaultColor": "#88bf98",
+      "name": "manc-seg-v1.2-4B-subbclass BI n=4",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "objectAlpha": 0.61,
+      "linkedSegmentationColorGroup": "neuropils",
+      "segments": [
+        "13409"
+      ],
+      "name": "manc-seg-v1.2-4B-sublass IR n=60",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "segments": [
+        "17490"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:BA",
+      "name": "manc-seg-v1.21-4B subclass BA n=1",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "segments": [
+        "10314",
+        "13436",
+        "17395",
+        "19912"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #subclass:IA",
+      "segmentDefaultColor": "#dd7878",
+      "name": "manc-seg-v1.22-4B subclass IA=4",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "rendering",
+      "objectAlpha": 0.41,
+      "segments": [
+        "101453",
+        "10314",
+        "14389",
+        "15002",
+        "15309",
+        "155236",
+        "15811",
+        "15969",
+        "162540",
+        "16757",
+        "17351",
+        "17490",
+        "17572",
+        "17678",
+        "18785",
+        "18831",
+        "19912",
+        "20077",
+        "21567",
+        "21956"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:early_secondary",
+      "segmentDefaultColor": "#fff700",
+      "name": "manc-seg-v1.22-4B-early secondary n= 20",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "rendering",
+      "objectAlpha": 0.35,
+      "segments": [
+        "10024",
+        "100339",
+        "100525",
+        "101447",
+        "102138",
+        "102536",
+        "13128",
+        "13409",
+        "13455",
+        "13506",
+        "13589",
+        "13770",
+        "13798",
+        "13975",
+        "14024",
+        "14031",
+        "14697",
+        "14728",
+        "14774",
+        "14954",
+        "15005",
+        "152244",
+        "152655",
+        "153878",
+        "15393",
+        "15401",
+        "158391",
+        "16224",
+        "16293",
+        "164102",
+        "164146",
+        "16487",
+        "16527",
+        "165318",
+        "166421",
+        "17409",
+        "17534",
+        "17567",
+        "17935",
+        "18148",
+        "18156",
+        "18253",
+        "18571",
+        "18605",
+        "18629",
+        "18641",
+        "18724",
+        "18755",
+        "18990",
+        "19250",
+        "19366",
+        "19833",
+        "19985",
+        "20585",
+        "20836",
+        "20932",
+        "21189",
+        "21322",
+        "21499",
+        "21808",
+        "21862",
+        "22163",
+        "22868",
+        "22997",
+        "23716",
+        "23790",
+        "24181",
+        "26388",
+        "26941",
+        "27760",
+        "29988",
+        "36722",
+        "38071"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:secondary",
+      "segmentDefaultColor": "#a1ddde",
+      "name": "manc-seg-v1.21- secondary n=73",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "segments": [
+        "11143",
+        "12523",
+        "13436",
+        "17395"
+      ],
+      "segmentQuery": "#hemilineage:04B #somaNeuromere:T1 #somaSide:LHS #birthtime:primary",
+      "segmentDefaultColor": "#00ccff",
+      "name": "manc-seg-v1.2 4B- primary  n=4",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "rendering",
+      "objectAlpha": 0.36,
+      "segments": [
+        "152244",
+        "15309",
+        "18148",
+        "19250",
+        "19366",
+        "21956"
+      ],
+      "segmentQuery": ", 18148 19250 19366 , , 15309, 152244 21956",
+      "segmentDefaultColor": "#ff0000",
+      "name": "manc-seg-v1.2 4b-manual BR-4 n=6",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "objectAlpha": 0.64,
+      "segments": [
+        "15002",
+        "155236",
+        "164102",
+        "18755"
+      ],
+      "segmentQuery": " , 155236 164102 15002,  18755,",
+      "segmentDefaultColor": "#e6517e",
+      "name": "manc-seg-v1.2 4B manual BR-3 n=4",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "rendering",
+      "objectAlpha": 0.51,
+      "segments": [
+        "10024",
+        "101447",
+        "12523",
+        "162540",
+        "16487",
+        "16527",
+        "17351",
+        "17409",
+        "17534",
+        "18571"
+      ],
+      "segmentQuery": "12523 162540 16527 10024 16487 17351 17409 18571 17534 101447",
+      "segmentDefaultColor": "#be2727",
+      "name": "manc-seg-v1.2 4B manual BR-2 n=10",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "source",
+      "objectAlpha": 0.98,
+      "segments": [
+        "13455",
+        "13506",
+        "13589",
+        "14728",
+        "14774",
+        "15005"
+      ],
+      "segmentQuery": "13455 13506 13589 14728 14774 15005",
+      "segmentDefaultColor": "#d75c09",
+      "name": "manc-seg-v1.2 4B manual BR-1 n=6",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "source",
+      "segments": [
+        "100339",
+        "16224",
+        "20836",
+        "26388"
+      ],
+      "segmentQuery": "16224 20836 100339 18831 26388 21808 20932 36722 158391 23790 20585",
+      "name": "manc-seg-v1.2 4B manual IR-independent leg n=11",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "source",
+      "segments": [
+        "152655",
+        "166421",
+        "21862"
+      ],
+      "segmentQuery": "21862 152655 166421",
+      "name": "manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "segments": [
+        "101453",
+        "17567",
+        "17572",
+        "18156",
+        "18785",
+        "20077",
+        "21567"
+      ],
+      "segmentQuery": "20077 21567 17567 18156 101453 17572 18785",
+      "name": "manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+      "tab": "segments",
+      "segments": [
+        "164146",
+        "18156",
+        "22868",
+        "23716",
+        "26941",
+        "27760",
+        "38071"
+      ],
+      "name": "manc-seg-v1.2 4B manual IR nomorphology assigned secondary"
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "segments",
+      "name": "manc-seg-v1.2 4B manual IR-1",
+      "segments": [
+        "102536",
+        "102138",
+        "19833",
+        "21189",
+        "21322",
+        "24181",
+        "18253",
+        "18629",
+        "27760",
+        "164146",
+        "26941",
+        "38071",
+        "22868",
+        "23716",
+        "18156"
+      ],
+      "segmentColors": {
+        "102536": "#87CEEB",
+        "102138": "#87CEEB",
+        "19833": "#87CEEB",
+        "21189": "#87CEEB",
+        "21322": "#87CEEB",
+        "24181": "#87CEEB",
+        "18253": "#87CEEB",
+        "18629": "#87CEEB",
+        "27760": "#87CEEB",
+        "164146": "#87CEEB",
+        "26941": "#87CEEB",
+        "38071": "#87CEEB",
+        "22868": "#87CEEB",
+        "23716": "#87CEEB",
+        "18156": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "segments",
+      "name": "manc-seg-v1.2 4B manual IR-2",
+      "segments": [
+        "22163",
+        "100525",
+        "153878",
+        "21499",
+        "18641",
+        "29988",
+        "165318",
+        "22997",
+        "18990"
+      ],
+      "segmentColors": {
+        "22163": "#FFA500",
+        "100525": "#FFA500",
+        "153878": "#FFA500",
+        "21499": "#FFA500",
+        "18641": "#FFA500",
+        "29988": "#FFA500",
+        "165318": "#FFA500",
+        "22997": "#FFA500",
+        "18990": "#FFA500"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "segments",
+      "name": "manc-seg-v1.2 4B manual IR-3",
+      "segments": [
+        "17935",
+        "17567"
+      ],
+      "segmentColors": {
+        "17935": "#E34234",
+        "17567": "#E34234"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "segments",
+      "name": "manc-seg-v1.2 4B manual IR-4",
+      "segments": [
+        "20077",
+        "21567",
+        "101453",
+        "17572",
+        "18785"
+      ],
+      "segmentColors": {
+        "20077": "#CC99FF",
+        "21567": "#CC99FF",
+        "101453": "#CC99FF",
+        "17572": "#CC99FF",
+        "18785": "#CC99FF"
+      },
+      "visible": true
+    }
+  ],
+  "showSlices": false,
+  "prefetch": false,
+  "selectedLayer": {
+    "flex": 1.49,
+    "visible": true,
+    "layer": "manc-seg-v1.2 4B manual IR nomorphology assigned secondary"
+  },
+  "crossSectionBackgroundColor": "#808080",
+  "projectionBackgroundColor": "#ffffff",
+  "layout": "3d",
+  "selection": {
+    "flex": 0.51,
+    "position": [
+      35430.42578125,
+      35617.8828125,
+      36043.18359375
+    ],
+    "layers": {
+      "all-tissue": {
+        "value": "1"
+      }
+    }
+  },
+  "layerListPanel": {
+    "visible": true
+  }
+}
