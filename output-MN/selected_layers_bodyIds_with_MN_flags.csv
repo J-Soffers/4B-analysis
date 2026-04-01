@@ -1,0 +1,46 @@
+layer_name,layer_type,visible,bodyId,n_downstream_MNs,talks_to_downstream_MN
+manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3,segmentation,False,21862,4,True
+manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3,segmentation,False,152655,4,True
+manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3,segmentation,False,166421,4,True
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,17567,0,False
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,17572,5,True
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,18156,0,False
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,18785,4,True
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,20077,4,True
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,21567,1,True
+manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary,segmentation,False,101453,3,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,18156,0,False
+manc-seg-v1.2 4B manual IR-1,segmentation,True,18253,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,18629,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,19833,3,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,21189,5,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,21322,4,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,22868,2,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,23716,2,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,24181,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,26941,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,27760,0,False
+manc-seg-v1.2 4B manual IR-1,segmentation,True,38071,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,102138,5,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,102536,1,True
+manc-seg-v1.2 4B manual IR-1,segmentation,True,164146,2,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,18641,4,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,18990,0,False
+manc-seg-v1.2 4B manual IR-2,segmentation,True,21499,3,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,22163,4,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,22997,0,False
+manc-seg-v1.2 4B manual IR-2,segmentation,True,29988,5,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,100525,2,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,153878,5,True
+manc-seg-v1.2 4B manual IR-2,segmentation,True,165318,5,True
+manc-seg-v1.2 4B manual IR-3,segmentation,True,17567,0,False
+manc-seg-v1.2 4B manual IR-3,segmentation,True,17935,6,True
+manc-seg-v1.2 4B manual IR-4,segmentation,True,17572,5,True
+manc-seg-v1.2 4B manual IR-4,segmentation,True,18785,4,True
+manc-seg-v1.2 4B manual IR-4,segmentation,True,20077,4,True
+manc-seg-v1.2 4B manual IR-4,segmentation,True,21567,1,True
+manc-seg-v1.2 4B manual IR-4,segmentation,True,101453,3,True
+manc-seg-v1.2 4B manual IR-independent leg n=11,segmentation,False,16224,0,False
+manc-seg-v1.2 4B manual IR-independent leg n=11,segmentation,False,20836,3,True
+manc-seg-v1.2 4B manual IR-independent leg n=11,segmentation,False,26388,0,False
+manc-seg-v1.2 4B manual IR-independent leg n=11,segmentation,False,100339,4,True
