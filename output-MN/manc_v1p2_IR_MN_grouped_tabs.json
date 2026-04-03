@@ -1,0 +1,548 @@
+{
+  "title": "4B IR layers paired with downstream MN partners",
+  "dimensions": {
+    "x": [
+      8e-09,
+      "m"
+    ],
+    "y": [
+      8e-09,
+      "m"
+    ],
+    "z": [
+      8e-09,
+      "m"
+    ]
+  },
+  "position": [
+    15353.5,
+    35844.5,
+    53248.5
+  ],
+  "crossSectionOrientation": [
+    0,
+    0.7071067690849304,
+    -0.7071067690849304,
+    0
+  ],
+  "crossSectionScale": 1,
+  "projectionOrientation": [
+    -0.29617950320243835,
+    0.698911726474762,
+    -0.6356714367866516,
+    0.14043490588665009
+  ],
+  "projectionScale": 26672.2540375702,
+  "layers": [
+    {
+      "type": "image",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-2-26-213dba213ef26e094c16c860ae7f4be0/v3_emdata_clahe_xy/jpeg",
+        "subsources": {
+          "default": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "source",
+      "name": "em"
+    },
+    {
+      "type": "annotation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-v1.2-synapse-partners-minconf-0.0.precomputed",
+      "tab": "rendering",
+      "ignoreNullSegmentFilter": false,
+      "shader": "#uicontrol bool showPre checkbox(default=true)\n#uicontrol bool showPostPartners checkbox(default=true)\n\n#uicontrol vec3 preColor color(default=\"red\")\n#uicontrol vec3 postColor color(default=\"blue\")\n\n// Note:\n//   For the MANC in neuprint,\n//   connection strengths don't\n//   include any synapses below\n//   confidence 0.4.\n#uicontrol float preConfidence slider(min=0, max=1, default=0)\n#uicontrol float postConfidence slider(min=0, max=1, default=0)\n\nvoid main() {\n  setColor(defaultColor());\n\n  float preSize = 6.0;\n  float postSize = 4.0;\n  \n  setEndpointMarkerColor(\n    vec4(preColor, 0.5),\n    vec4(postColor, 0.5));\n  \n  if (showPre && showPostPartners) {\n    setLineWidth(1.0);\n    setEndpointMarkerSize(preSize, postSize);\n  }\n  else if (showPostPartners) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, postSize);\n  }\n  else if (showPre) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(preSize, 0.0);\n  }\n  else {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, 0.0);\n  }\n  \n  if (prop_pre_synaptic_confidence() < preConfidence ||\n      prop_post_synaptic_confidence() < postConfidence) discard;\n}\n",
+      "shaderControls": {
+        "showPostPartners": false,
+        "postColor": "#00ffff",
+        "preConfidence": 0.4,
+        "postConfidence": 0.4
+      },
+      "linkedSegmentationLayer": {
+        "pre_synaptic_cell": "manc:v1.2.1-TTMn"
+      },
+      "filterBySegmentation": [
+        "pre_synaptic_cell"
+      ],
+      "name": "presyn",
+      "visible": false
+    },
+    {
+      "type": "annotation",
+      "source": "precomputed://gs://manc-seg-v1p2/manc-v1.2-synapse-partners-minconf-0.0.precomputed",
+      "tab": "rendering",
+      "ignoreNullSegmentFilter": false,
+      "shader": "#uicontrol bool showPrePartners checkbox(default=true)\n#uicontrol bool showPost checkbox(default=true)\n\n#uicontrol vec3 preColor color(default=\"red\")\n#uicontrol vec3 postColor color(default=\"blue\")\n\n// Note:\n//   For the MANC in neuprint,\n//   connection strengths don't\n//   include any synapses below\n//   confidence 0.4.\n#uicontrol float preConfidence slider(min=0, max=1, default=0.4)\n#uicontrol float postConfidence slider(min=0, max=1, default=0.4)\n\nvoid main() {\n  setColor(defaultColor());\n\n  float preSize = 6.0;\n  float postSize = 4.0;\n  \n  setEndpointMarkerColor(\n    vec4(preColor, 0.5),\n    vec4(postColor, 0.5));\n  \n  if (showPrePartners && showPost) {\n    setLineWidth(1.0);\n    setEndpointMarkerSize(preSize, postSize);\n  }\n  else if (showPost) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, postSize);\n  }\n  else if (showPrePartners) {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(preSize, 0.0);\n  }\n  else {\n    setLineWidth(0.0);\n    setEndpointMarkerSize(0.0, 0.0);\n  }\n  \n  if (prop_pre_synaptic_confidence() < preConfidence ||\n      prop_post_synaptic_confidence() < postConfidence) discard;\n}\n",
+      "shaderControls": {
+        "showPrePartners": false,
+        "postColor": "#00ffff"
+      },
+      "linkedSegmentationLayer": {
+        "post_synaptic_cell": "manc:v1.2.1-TTMn"
+      },
+      "filterBySegmentation": [
+        "post_synaptic_cell"
+      ],
+      "name": "postsyn",
+      "visible": false
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3",
+      "name": "manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3 | input",
+      "segments": [
+        "21862",
+        "152655",
+        "166421"
+      ],
+      "segmentColors": {
+        "21862": "#87CEEB",
+        "152655": "#87CEEB",
+        "166421": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3",
+      "name": "manc-seg-v1.2 4B manual  IR- proprioceptice tactile n=3 | MN",
+      "segments": [
+        "12396",
+        "12686",
+        "13490",
+        "19319"
+      ],
+      "segmentColors": {
+        "12396": "#FF0000",
+        "12686": "#FF0000",
+        "13490": "#FF0000",
+        "19319": "#FF0000"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary",
+      "name": "manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary | input",
+      "segments": [
+        "17567",
+        "17572",
+        "18156",
+        "18785",
+        "20077",
+        "21567",
+        "101453"
+      ],
+      "segmentColors": {
+        "17567": "#87CEEB",
+        "17572": "#87CEEB",
+        "18156": "#87CEEB",
+        "18785": "#87CEEB",
+        "20077": "#87CEEB",
+        "21567": "#87CEEB",
+        "101453": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary",
+      "name": "manc-seg-v1.2 4B manual  IR-nomorphology assigned-early secondary | MN",
+      "segments": [
+        "12096",
+        "12396",
+        "12686",
+        "13490",
+        "19319",
+        "13628"
+      ],
+      "segmentColors": {
+        "12096": "#00FFFF",
+        "12396": "#00FFFF",
+        "12686": "#00FFFF",
+        "13490": "#00FFFF",
+        "19319": "#00FFFF",
+        "13628": "#00FFFF"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-1",
+      "name": "manc-seg-v1.2 4B manual IR-1 | input",
+      "segments": [
+        "18156",
+        "18253",
+        "18629",
+        "19833",
+        "21189",
+        "21322",
+        "22868",
+        "23716",
+        "24181",
+        "26941",
+        "27760",
+        "38071",
+        "102138",
+        "102536",
+        "164146"
+      ],
+      "segmentColors": {
+        "18156": "#87CEEB",
+        "18253": "#87CEEB",
+        "18629": "#87CEEB",
+        "19833": "#87CEEB",
+        "21189": "#87CEEB",
+        "21322": "#87CEEB",
+        "22868": "#87CEEB",
+        "23716": "#87CEEB",
+        "24181": "#87CEEB",
+        "26941": "#87CEEB",
+        "27760": "#87CEEB",
+        "38071": "#87CEEB",
+        "102138": "#87CEEB",
+        "102536": "#87CEEB",
+        "164146": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-1",
+      "name": "manc-seg-v1.2 4B manual IR-1 | MN",
+      "segments": [
+        "12686",
+        "12396",
+        "19319",
+        "12096",
+        "13490",
+        "13628"
+      ],
+      "segmentColors": {
+        "12686": "#FFD700",
+        "12396": "#FFD700",
+        "19319": "#FFD700",
+        "12096": "#FFD700",
+        "13490": "#FFD700",
+        "13628": "#FFD700"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-2",
+      "name": "manc-seg-v1.2 4B manual IR-2 | input",
+      "segments": [
+        "18641",
+        "18990",
+        "21499",
+        "22163",
+        "22997",
+        "29988",
+        "100525",
+        "153878",
+        "165318"
+      ],
+      "segmentColors": {
+        "18641": "#87CEEB",
+        "18990": "#87CEEB",
+        "21499": "#87CEEB",
+        "22163": "#87CEEB",
+        "22997": "#87CEEB",
+        "29988": "#87CEEB",
+        "100525": "#87CEEB",
+        "153878": "#87CEEB",
+        "165318": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-2",
+      "name": "manc-seg-v1.2 4B manual IR-2 | MN",
+      "segments": [
+        "12396",
+        "12686",
+        "13490",
+        "19319",
+        "12096",
+        "13628"
+      ],
+      "segmentColors": {
+        "12396": "#FF00FF",
+        "12686": "#FF00FF",
+        "13490": "#FF00FF",
+        "19319": "#FF00FF",
+        "12096": "#FF00FF",
+        "13628": "#FF00FF"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-3",
+      "name": "manc-seg-v1.2 4B manual IR-3 | input",
+      "segments": [
+        "17567",
+        "17935"
+      ],
+      "segmentColors": {
+        "17567": "#87CEEB",
+        "17935": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-3",
+      "name": "manc-seg-v1.2 4B manual IR-3 | MN",
+      "segments": [
+        "12096",
+        "12396",
+        "12686",
+        "13490",
+        "13628",
+        "19319"
+      ],
+      "segmentColors": {
+        "12096": "#00FF00",
+        "12396": "#00FF00",
+        "12686": "#00FF00",
+        "13490": "#00FF00",
+        "13628": "#00FF00",
+        "19319": "#00FF00"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-4",
+      "name": "manc-seg-v1.2 4B manual IR-4 | input",
+      "segments": [
+        "17572",
+        "18785",
+        "20077",
+        "21567",
+        "101453"
+      ],
+      "segmentColors": {
+        "17572": "#87CEEB",
+        "18785": "#87CEEB",
+        "20077": "#87CEEB",
+        "21567": "#87CEEB",
+        "101453": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-4",
+      "name": "manc-seg-v1.2 4B manual IR-4 | MN",
+      "segments": [
+        "12096",
+        "12396",
+        "12686",
+        "13490",
+        "19319",
+        "13628"
+      ],
+      "segmentColors": {
+        "12096": "#FFA500",
+        "12396": "#FFA500",
+        "12686": "#FFA500",
+        "13490": "#FFA500",
+        "19319": "#FFA500",
+        "13628": "#FFA500"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-independent leg n=11",
+      "name": "manc-seg-v1.2 4B manual IR-independent leg n=11 | input",
+      "segments": [
+        "16224",
+        "20836",
+        "26388",
+        "100339"
+      ],
+      "segmentColors": {
+        "16224": "#87CEEB",
+        "20836": "#87CEEB",
+        "26388": "#87CEEB",
+        "100339": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "source": {
+        "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+        "subsources": {
+          "default": true,
+          "properties": true,
+          "mesh": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "tab": "manc-seg-v1.2 4B manual IR-independent leg n=11",
+      "name": "manc-seg-v1.2 4B manual IR-independent leg n=11 | MN",
+      "segments": [
+        "12686",
+        "13490",
+        "19319",
+        "12396"
+      ],
+      "segmentColors": {
+        "12686": "#E34234",
+        "13490": "#E34234",
+        "19319": "#E34234",
+        "12396": "#E34234"
+      },
+      "visible": true
+    }
+  ],
+  "showSlices": false,
+  "prefetch": false,
+  "selectedLayer": {
+    "flex": 1.49,
+    "visible": true,
+    "layer": "manc-seg-v1.2 4B manual IR nomorphology assigned secondary"
+  },
+  "crossSectionBackgroundColor": "#808080",
+  "projectionBackgroundColor": "#ffffff",
+  "layout": "3d",
+  "selection": {
+    "flex": 0.51,
+    "position": [
+      35430.42578125,
+      35617.8828125,
+      36043.18359375
+    ],
+    "layers": {
+      "all-tissue": {
+        "value": "1"
+      }
+    }
+  },
+  "layerListPanel": {
+    "visible": true
+  }
+}
