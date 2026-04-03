@@ -26,3 +26,4 @@ Thumbs.db
 *.key
 *.pem
 create_token.json
+local_excludeGithub/
