@@ -1,0 +1,95 @@
+layer_name,segment_id,type,instance,class,subclass,description MANC,serialMotif,,,Description Jelly
+MANC_v1.2.3_BA,17490,AN04B051,AN04B051_T1_L,ascending neuron,BA,pred ChAT,,,,"stretchy thin neuron, extends anterior and posterior  outside of T1"
+MANC_v1.2.3_BI,11143,IN04B002,IN04B002_T1_L,intrinsic neuron,BI,pred ChAT,,,,fuzzy and estends into T2 and T3
+MANC_v1.2.3_BI,14031,IN04B028,IN04B028_T1_L,intrinsic neuron,BI,,,,,fuzzy and estends into T2 and T4
+MANC_v1.2.3_BI,15393,IN04B024,IN04B024_T1_L,intrinsic neuron,BI,20A? in T1 LHS,,,,fuzzy and estends into T2 and T5
+MANC_v1.2.3_BI,15401,IN04B010,IN04B010_T1_L,intrinsic neuron,BI,20A in T1 LHS,,,,fuzzy and estends into T2 and T6
+MANC_v1.2.3_BI,15969,IN04B028,IN04B028_T1_L,intrinsic neuron,BI,4B in T1 LHS,,,,fuzzy and estends into T2 and T7
+MANC_v1.2.3_BI,16293,IN04B024,IN04B024_T1_L,intrinsic neuron,BI,20A in T1 LHS,,,,fuzzy and estends into T2 and T8
+MANC_v1.2.3_IA,10314,AN04B001,AN04B001_T1_L,ascending neuron,IA,4B? primary in T1 LHS,complex,,,ascending and desendign neurites- outside of neuropil
+MANC_v1.2.3_IA,13436,AN04B003,AN04B003_T1_L,ascending neuron,IA,,ascending,,,ascending and desendign neurites- outside of neuropil
+MANC_v1.2.3_IA,17395,AN04B004,AN04B004_T1_L,ascending neuron,IA,pred ChAT; 4B in T1 LHS,complex,,,ascending and desendign neurites- outside of neuropil
+MANC_v1.2.3_IA,19912,AN04B023,AN04B023_T1_L,ascending neuron,IA,1B? pred ChAT,ascending,,,ascending and desendign neurites- outside of neuropil
+MANC_v1.2.3_br1,10024,IN04B041,IN04B041_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,12523,IN04B008,IN04B008_T1_L,intrinsic neuron,BR,4B? in T1 LHS,independent leg,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,15309,IN04B085,IN04B085_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,16487,IN04B041,IN04B041_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,16527,IN04B039,IN04B039_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,17351,IN04B047,IN04B047_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,17409,IN04B050,IN04B050_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,17534,IN04B073,IN04B073_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,18571,IN04B050,IN04B050_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,21956,IN04B101,IN04B101_T1_L,intrinsic neuron,BR,4B? in T1 LHS; 1st pass ECM; may require cleave,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,101447,IN04B073,IN04B073_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,152244,IN04B086,IN04B086_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br1,162540,IN04B020,IN04B020_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"caudal medial nuclei, faciculation  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_br2,13455,IN04B010,IN04B010_T1_L,intrinsic neuron,BR,,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,13506,IN04B013,IN04B013_T1_L,intrinsic neuron,BR,20A? in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,13589,IN04B010,IN04B010_T1_L,intrinsic neuron,BR,,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,14728,IN04B013,IN04B013_T1_L,intrinsic neuron,BR,20A? in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,14774,IN04B013,IN04B013_T1_L,intrinsic neuron,BR,20A in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,15005,IN04B013,IN04B013_T1_L,intrinsic neuron,BR,20A? in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,18148,IN04B079,IN04B079_T1_L,intrinsic neuron,BR,20A in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,19250,IN04B079,IN04B079_T1_L,intrinsic neuron,BR,20A in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br2,19366,IN04B079,IN04B079_T1_L,intrinsic neuron,BR,20A in T1 LHS,,,,"lateral nuclei, strong primary neurines; form chiasm"
+MANC_v1.2.3_br3,13535,,TBD,,,,,,,"medial nuclei, fuzzy neurites all over neuropil and towards contralateral side"
+MANC_v1.2.3_br3,15002,IN04B021,IN04B021_T1_L,intrinsic neuron,BR,4B in T1 LHS,,,,"medial nuclei, fuzzy neurites all over neuropil and towards contralateral side"
+MANC_v1.2.3_br3,18755,IN04B067,IN04B067_T1_L,intrinsic neuron,BR,,,,,"medial nuclei, fuzzy neurites all over neuropil and towards contralateral side"
+MANC_v1.2.3_br3,155236,IN04B019,IN04B019_T1_L,intrinsic neuron,BR,4B? in T1 LHS,,,,"medial nuclei, fuzzy neurites all over neuropil and towards contralateral side"
+MANC_v1.2.3-ir_1_1,13770,IN04B026,IN04B026_T1_L,intrinsic neuron,IR,20A in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+MANC_v1.2.3-ir_1_1,16224,IN04B092,IN04B092_T1_L,intrinsic neuron,IR,20A? in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+MANC_v1.2.3-ir_1_1,20585,IN04B095,IN04B095_T1_L,intrinsic neuron,IR,20A? in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+MANC_v1.2.3-ir_1_1,23790,IN04B097,IN04B097_T1_L,intrinsic neuron,IR,20A? in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+MANC_v1.2.3-ir_1_1,26388,IN04B112,IN04B112_T1_L,intrinsic neuron,IR,20A in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+MANC_v1.2.3-ir_1_1,102536,IN04B092,IN04B092_T1_L,intrinsic neuron,IR,20A? in T1 LHS,independent leg,,,"dispersed soma position, fuzzy fasiculation covers neuropil"
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+MANC_v1.2.3_ir_2_04B_1,15811,IN04B034,IN04B034_T1_L,intrinsic neuron,IR,,,,,"caudal  medial nuclei, confined  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_ir_2_04B_1,16757,IN04B034,IN04B034_T1_L,intrinsic neuron,IR,4B? in T1 LHS,,,,"caudal  medial nuclei, confined  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_ir_2_04B_1,17572,IN04B038,IN04B038_T1_L,intrinsic neuron,IR,4B in T1 LHS,,,,"caudal  medial nuclei, confined  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_ir_2_04B_1,18785,IN04B038,IN04B038_T1_L,intrinsic neuron,IR,4B in T1 LHS,,,,"caudal  medial nuclei, confined  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_ir_2_04B_1,166421,IN04B101,IN04B101_T1_L,intrinsic neuron,IR,4B? in T1 LHS,,,,"caudal  medial nuclei, confined  crecent-shape crandio-caudal of medial side"
+MANC_v1.2.3_ir_2_04B_2,17678,IN04B031,IN04B031_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,17935,IN04B094,IN04B094_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,18605,IN04B031,IN04B031_T1_L,intrinsic neuron,IR,4B? in T1 LHS,independent leg,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,18831,IN04B037,IN04B037_T1_L,intrinsic neuron,IR,4B? in T1 LHS,independent leg,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,21499,IN04B072,IN04B072_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,21808,IN04B104,IN04B104_T1_L,intrinsic neuron,IR,,independent leg,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,22163,IN04B091,IN04B091_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,26941,IN04B111,IN04B111_T1_L,intrinsic neuron,IR,4B in T1 LHS,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,29988,IN04B094,IN04B094_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,100339,IN04B078,IN04B078_T1_L,intrinsic neuron,IR,4B in T1 LHS,independent leg,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,100525,IN04B091,IN04B091_T1_L,intrinsic neuron,IR,9A? in T1 LHS,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,153878,IN04B091,IN04B091_T1_L,intrinsic neuron,IR,4B? in T1 LHS,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,164146,IN04B111,IN04B111_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_2,165318,IN04B094,IN04B094_T1_L,intrinsic neuron,IR,,,,,"dispersed soma, fasiculation weight lateral side from dorsal to ventral"
+MANC_v1.2.3_ir_2_04B_3,22997,IN04B102,IN04B102_T1_L,intrinsic neuron,IR,,,,,weird single neuron
+MANC_v1.2.3_ir_2_04B_4,20932,IN04B100,IN04B100_T1_L,intrinsic neuron,IR,4B in T1 LHS,independent leg,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_4,21567,IN04B066,IN04B066_T1_L,intrinsic neuron,IR,4B? in T1 LHS,,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_4,36722,IN04B100,IN04B100_T1_L,intrinsic neuron,IR,4B? in T1 LHS,independent leg,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_4,38071,IN04B100,IN04B100_T1_L,intrinsic neuron,IR,,,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_4,102138,IN04B085,IN04B085_T1_L,intrinsic neuron,IR,4B? in T1 LHS,,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_4,158391,IN04B100,IN04B100_T1_L,intrinsic neuron,IR,4B in T1 LHS,independent leg,,,caudal some three strong primary neurites
+MANC_v1.2.3_ir_2_04B_5,18641,IN04B069,IN04B069_T1_L,intrinsic neuron,IR,,,,,"anterior nuclei, cresent via posterio-lateral to anterior"
+MANC_v1.2.3_ir_2_04B_5,20836,IN04B078,IN04B078_T1_L,intrinsic neuron,IR,4B in T1 LHS,independent leg,,,"anterior nuclei, cresent via posterio-lateral to anterior"
+MANC_v1.2.3_ir_2_04B_6,14389,IN04B014,IN04B014_T1_L,intrinsic neuron,IR,,,,,weird single neuron
+MANC_v1.2.3_ir_2_04B_7,22997,IN04B102,IN04B102_T1_L,intrinsic neuron,IR,,,,,weird single neuron
