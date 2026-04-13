@@ -1,0 +1,864 @@
+{
+  "title": "MANC_v1.2.3_4B_T1r",
+  "dimensions": {
+    "x": [
+      8e-09,
+      "m"
+    ],
+    "y": [
+      8e-09,
+      "m"
+    ],
+    "z": [
+      8e-09,
+      "m"
+    ]
+  },
+  "position": [
+    23056.5,
+    29733.5,
+    41138.5
+  ],
+  "crossSectionOrientation": [
+    0,
+    0.7071067690849304,
+    -0.7071067690849304,
+    0
+  ],
+  "crossSectionScale": 1,
+  "projectionOrientation": [
+    0,
+    0.7071067690849304,
+    -0.7071067690849304,
+    0
+  ],
+  "projectionScale": 91364.04452716278,
+  "layout": "3d",
+  "showSlices": false,
+  "projectionBackgroundColor": "#ffffff",
+  "crossSectionBackgroundColor": "#ffffff",
+  "selectedLayer": {
+    "flex": 1.49,
+    "size": 426,
+    "visible": true,
+    "layer": "manc:v1.2.3"
+  },
+  "settingsPanel": {
+    "visible": true
+  },
+  "layers": [
+    {
+      "type": "image",
+      "name": "EM",
+      "source": {
+        "url": "precomputed://gs://flyem-vnc-2-26-213dba213ef26e094c16c860ae7f4be0/v3_emdata_clahe_xy/jpeg",
+        "subsources": {
+          "default": true
+        },
+        "enableDefaultSubsources": false
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_BA",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "20275"
+      ],
+      "segmentColors": {
+        "20275": "#87CEEB"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_BI",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "11081",
+        "14755",
+        "16504",
+        "16964",
+        "17195",
+        "17407"
+      ],
+      "segmentColors": {
+        "11081": "#FFA500",
+        "14755": "#FFA500",
+        "16504": "#FFA500",
+        "16964": "#FFA500",
+        "17195": "#FFA500",
+        "17407": "#FFA500"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_BR",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "12132",
+        "12949",
+        "13154",
+        "13968",
+        "14137",
+        "14148",
+        "14880",
+        "15750",
+        "16179",
+        "16230",
+        "16626",
+        "17068",
+        "17128",
+        "18269",
+        "18298",
+        "18586",
+        "18608",
+        "19022",
+        "19446",
+        "19614",
+        "20124",
+        "20791",
+        "21212",
+        "21731",
+        "22379",
+        "22954",
+        "38325",
+        "155591"
+      ],
+      "segmentColors": {
+        "12132": "#E34234",
+        "12949": "#E34234",
+        "13154": "#E34234",
+        "13968": "#E34234",
+        "14137": "#E34234",
+        "14148": "#E34234",
+        "14880": "#E34234",
+        "15750": "#E34234",
+        "16179": "#E34234",
+        "16230": "#E34234",
+        "16626": "#E34234",
+        "17068": "#E34234",
+        "17128": "#E34234",
+        "18269": "#E34234",
+        "18298": "#E34234",
+        "18586": "#E34234",
+        "18608": "#E34234",
+        "19022": "#E34234",
+        "19446": "#E34234",
+        "19614": "#E34234",
+        "20124": "#E34234",
+        "20791": "#E34234",
+        "21212": "#E34234",
+        "21731": "#E34234",
+        "22379": "#E34234",
+        "22954": "#E34234",
+        "38325": "#E34234",
+        "155591": "#E34234"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_IA",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "10413",
+        "11885",
+        "13414",
+        "19114"
+      ],
+      "segmentColors": {
+        "10413": "#CC99FF",
+        "11885": "#CC99FF",
+        "13414": "#CC99FF",
+        "19114": "#CC99FF"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_IR",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "13465",
+        "14088",
+        "14098",
+        "14297",
+        "14434",
+        "14467",
+        "14811",
+        "14886",
+        "14944",
+        "15369",
+        "15524",
+        "16209",
+        "16938",
+        "17314",
+        "17429",
+        "17584",
+        "17740",
+        "18712",
+        "18796",
+        "18802",
+        "18861",
+        "19167",
+        "19475",
+        "20137",
+        "20520",
+        "20885",
+        "21001",
+        "21134",
+        "21160",
+        "21519",
+        "21782",
+        "22762",
+        "22783",
+        "22787",
+        "22806",
+        "23029",
+        "23152",
+        "23171",
+        "23506",
+        "23545",
+        "23759",
+        "24408",
+        "25160",
+        "25842",
+        "26241",
+        "26261",
+        "26949",
+        "28560",
+        "33190",
+        "33615",
+        "100579",
+        "101895",
+        "102322",
+        "102697",
+        "103220",
+        "153835",
+        "164271",
+        "164272",
+        "166416"
+      ],
+      "segmentColors": {
+        "13465": "#66CDAA",
+        "14088": "#66CDAA",
+        "14098": "#66CDAA",
+        "14297": "#66CDAA",
+        "14434": "#66CDAA",
+        "14467": "#66CDAA",
+        "14811": "#66CDAA",
+        "14886": "#66CDAA",
+        "14944": "#66CDAA",
+        "15369": "#66CDAA",
+        "15524": "#66CDAA",
+        "16209": "#66CDAA",
+        "16938": "#66CDAA",
+        "17314": "#66CDAA",
+        "17429": "#66CDAA",
+        "17584": "#66CDAA",
+        "17740": "#66CDAA",
+        "18712": "#66CDAA",
+        "18796": "#66CDAA",
+        "18802": "#66CDAA",
+        "18861": "#66CDAA",
+        "19167": "#66CDAA",
+        "19475": "#66CDAA",
+        "20137": "#66CDAA",
+        "20520": "#66CDAA",
+        "20885": "#66CDAA",
+        "21001": "#66CDAA",
+        "21134": "#66CDAA",
+        "21160": "#66CDAA",
+        "21519": "#66CDAA",
+        "21782": "#66CDAA",
+        "22762": "#66CDAA",
+        "22783": "#66CDAA",
+        "22787": "#66CDAA",
+        "22806": "#66CDAA",
+        "23029": "#66CDAA",
+        "23152": "#66CDAA",
+        "23171": "#66CDAA",
+        "23506": "#66CDAA",
+        "23545": "#66CDAA",
+        "23759": "#66CDAA",
+        "24408": "#66CDAA",
+        "25160": "#66CDAA",
+        "25842": "#66CDAA",
+        "26241": "#66CDAA",
+        "26261": "#66CDAA",
+        "26949": "#66CDAA",
+        "28560": "#66CDAA",
+        "33190": "#66CDAA",
+        "33615": "#66CDAA",
+        "100579": "#66CDAA",
+        "101895": "#66CDAA",
+        "102322": "#66CDAA",
+        "102697": "#66CDAA",
+        "103220": "#66CDAA",
+        "153835": "#66CDAA",
+        "164271": "#66CDAA",
+        "164272": "#66CDAA",
+        "166416": "#66CDAA"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_1",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_2",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_3",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_4",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_5",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_2_04B_6",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_1",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_2",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_3",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_4",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_5",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_6",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [],
+      "segmentColors": {},
+      "visible": true
+    }
+  ]
+}
