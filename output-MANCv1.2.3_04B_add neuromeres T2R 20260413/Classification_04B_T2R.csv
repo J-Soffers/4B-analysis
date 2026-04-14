@@ -1,0 +1,96 @@
+neuromere,bodyId,group_var,major_class,subclass_level1,morphology_cluster,morphology_cluster_id,legacy_tag,type,instance,class,subclass,hemilineage,somaNeuromere,somaSide,rootSide,longTract,birthtime
+T2R,14423,ir_1_1_ids,IR,1,1,IR_1_1,04B,IN04B074,IN04B074_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,15109,ir_1_1_ids,IR,1,1,IR_1_1,04B,IN04B081,IN04B081_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,16396,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B103,IN04B103_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21120,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B092,IN04B092_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21459,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B103,IN04B103_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22132,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B104,IN04B104_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22342,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B103,IN04B103_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22780,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B081,IN04B081_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,23973,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B108,IN04B108_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,24986,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B108,IN04B108_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,27855,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B108,IN04B108_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,155096,ir_1_2_ids,IR,1,2,IR_1_2,04B,IN04B103,IN04B103_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,18335,ir_1_3_ids,IR,1,3,IR_1_3,04B,IN04B081,IN04B081_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,18663,ir_1_3_ids,IR,1,3,IR_1_3,04B,IN04B081,IN04B081_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20650,ir_1_3_ids,IR,1,3,IR_1_3,04B,IN04B081,IN04B081_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,19071,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B089,IN04B089_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20556,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B097,IN04B097_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21272,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B102,IN04B102_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22793,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B102,IN04B102_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,23358,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B102,IN04B102_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,24942,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B112,IN04B112_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,25864,ir_1_4_ids,IR,1,4,IR_1_4,04B,IN04B109,IN04B109_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,23309,ir_1_5_ids,IR,1,5,IR_1_5,04B,IN04B099,IN04B099_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,101038,ir_1_5_ids,IR,1,5,IR_1_5,04B,IN04B061,IN04B061_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,19901,ir_1_6_ids,IR,1,6,IR_1_6,04B,IN04B074,IN04B074_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22800,ir_1_6_ids,IR,1,6,IR_1_6,04B,IN04B106,IN04B106_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,13591,ir_2_04B_1_ids,IR,2,1,IR_2_1,20A,IN04B027,IN04B027_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,13608,ir_2_04B_1_ids,IR,2,1,IR_2_1,20A,IN04B011,IN04B011_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,13668,ir_2_04B_1_ids,IR,2,1,IR_2_1,20A,IN04B011,IN04B011_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,14256,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B049,IN04B049_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,16459,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B049,IN04B049_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,17956,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B049,IN04B049_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,19484,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B090,IN04B090_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,20152,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B090,IN04B090_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,100075,ir_2_04B_2_ids,IR,2,2,IR_2_2,20A,IN04B100,IN04B100_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20187,ir_2_04B_3_ids,IR,2,3,IR_2_3,20A,IN04B026,IN04B026_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20416,ir_2_04B_3_ids,IR,2,3,IR_2_3,20A,IN04B087,IN04B087_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21216,ir_2_04B_3_ids,IR,2,3,IR_2_3,20A,IN04B078,IN04B078_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,165061,ir_2_04B_3_ids,IR,2,3,IR_2_3,20A,IN04B025,IN04B025_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,174628,ir_2_04B_3_ids,IR,2,3,IR_2_3,20A,IN04B078,IN04B078_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,18574,ir_2_04B_4_ids,IR,2,4,IR_2_4,20A,IN04B084,IN04B084_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20046,ir_2_04B_4_ids,IR,2,4,IR_2_4,20A,IN04B084,IN04B084_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21464,ir_2_04B_4_ids,IR,2,4,IR_2_4,20A,IN04B084,IN04B084_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,18788,ir_2_04B_5_ids,IR,2,5,IR_2_5,20A,IN04B082,IN04B082_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22299,ir_2_04B_5_ids,IR,2,5,IR_2_5,20A,IN04B084,IN04B084_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,15537,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B027,IN04B027_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,17435,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B031,IN04B031_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,19497,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B037,IN04B037_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,19641,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B062,IN04B062_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,19844,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B071,IN04B071_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21146,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B062,IN04B062_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,21147,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B071,IN04B071_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,29101,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B027,IN04B027_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,early secondary
+T2R,35471,ir_2_04B_6_ids,IR,2,6,IR_2_6,20A,IN04B071,IN04B071_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,17386,ir_2_04B_7_ids,IR,2,7,IR_2_7,20A,IN04B100,IN04B100_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,22988,ir_2_04B_7_ids,IR,2,7,IR_2_7,20A,IN04B100,IN04B100_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,20346,ir_2_04B_7_ids,IR,2,7,IR_2_7,20A,IN04B087,IN04B087_T2_R,intrinsic neuron,IR,04B,T2,RHS,,,secondary
+T2R,11945,br_ids,BR,1,1,BR_1_1,,IN04B008,IN04B008_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,primary
+T2R,14134,br_ids,BR,1,1,BR_1_1,,IN04B012,IN04B012_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,14272,br_ids,BR,1,1,BR_1_1,,IN04B012,IN04B012_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,14628,br_ids,BR,1,1,BR_1_1,,IN04B017,IN04B017_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,14932,br_ids,BR,1,1,BR_1_1,,IN04B018,IN04B018_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,15036,br_ids,BR,1,1,BR_1_1,,IN04B036,IN04B036_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,early secondary
+T2R,15037,br_ids,BR,1,1,BR_1_1,,IN04B018,IN04B018_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,15104,br_ids,BR,1,1,BR_1_1,,IN04B017,IN04B017_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,15128,br_ids,BR,1,1,BR_1_1,,IN04B018,IN04B018_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16171,br_ids,BR,1,1,BR_1_1,,IN04B016,IN04B016_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16361,br_ids,BR,1,1,BR_1_1,,IN04B046,IN04B046_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16408,br_ids,BR,1,1,BR_1_1,,IN04B017,IN04B017_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16640,br_ids,BR,1,1,BR_1_1,,IN04B018,IN04B018_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16772,br_ids,BR,1,1,BR_1_1,,IN04B036,IN04B036_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,early secondary
+T2R,16820,br_ids,BR,1,1,BR_1_1,,IN04B035,IN04B035_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16852,br_ids,BR,1,1,BR_1_1,,IN04B033,IN04B033_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,16982,br_ids,BR,1,1,BR_1_1,,IN04B046,IN04B046_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,17166,br_ids,BR,1,1,BR_1_1,,IN04B056,IN04B056_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,17559,br_ids,BR,1,1,BR_1_1,,IN04B036,IN04B036_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,early secondary
+T2R,17978,br_ids,BR,1,1,BR_1_1,,IN04B057,IN04B057_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,18208,br_ids,BR,1,1,BR_1_1,,IN04B040,IN04B040_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,18564,br_ids,BR,1,1,BR_1_1,,IN04B077,IN04B077_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,18670,br_ids,BR,1,1,BR_1_1,,IN04B077,IN04B077_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,20181,br_ids,BR,1,1,BR_1_1,,IN04B057,IN04B057_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,20349,br_ids,BR,1,1,BR_1_1,,IN04B017,IN04B017_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,23803,br_ids,BR,1,1,BR_1_1,,IN04B077,IN04B077_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,32712,br_ids,BR,1,1,BR_1_1,,IN04B033,IN04B033_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,secondary
+T2R,101891,br_ids,BR,1,1,BR_1_1,,IN04B036,IN04B036_T2_R,intrinsic neuron,BR,04B,T2,RHS,,,early secondary
+T2R,15445,bi_ids,BI,1,1,BI_1_1,,IN04B016,IN04B016_T2_R,intrinsic neuron,BI,04B,T2,RHS,,,secondary
+T2R,16530,bi_ids,BI,1,1,BI_1_1,,IN04B030,IN04B030_T2_R,intrinsic neuron,BI,04B,T2,RHS,,,secondary
+T2R,19473,bi_ids,BI,1,1,BI_1_1,,IN04B030,IN04B030_T2_R,intrinsic neuron,BI,04B,T2,RHS,,,secondary
+T2R,10179,ia_ids,IA,1,1,IA_1_1,,AN04B001,AN04B001_T2_R,ascending neuron,IA,04B,T2,RHS,RHS,DLV,early secondary
+T2R,10394,ia_ids,IA,1,1,IA_1_1,,AN04B003,AN04B003_T2_R,ascending neuron,IA,04B,T2,RHS,RHS,MDA,primary
+T2R,15288,ia_ids,IA,1,1,IA_1_1,,AN04B023,AN04B023_T2_R,ascending neuron,IA,04B,T2,RHS,RHS,VLT,early secondary
+T2R,10873,ii_ids,II,1,1,II_1_1,,IN04B004,IN04B004_T2_R,intrinsic neuron,II,04B,T2,RHS,,,primary
+T2R,12284,ii_ids,II,1,1,II_1_1,,IN04B006,IN04B006_T2_R,intrinsic neuron,II,04B,T2,RHS,,,primary
+T2R,13720,ii_ids,II,1,1,II_1_1,,IN04B058,IN04B058_T2_R,intrinsic neuron,II,04B,T2,RHS,,,secondary
+T2R,17981,ii_ids,II,1,1,II_1_1,,IN04B055,IN04B055_T2_R,intrinsic neuron,II,04B,T2,RHS,,,secondary
