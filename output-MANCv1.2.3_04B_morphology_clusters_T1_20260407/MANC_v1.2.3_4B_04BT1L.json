@@ -915,20 +915,16 @@
         }
       ],
       "segments": [
-        "13770",
-        "16224",
-        "20585",
-        "23790",
-        "26388",
-        "102536"
+        "18724",
+        "19985",
+        "22997",
+        "27760"
       ],
       "segmentColors": {
-        "13770": "#E34234",
-        "16224": "#E34234",
-        "20585": "#E34234",
-        "23790": "#E34234",
-        "26388": "#E34234",
-        "102536": "#E34234"
+        "18724": "#E34234",
+        "19985": "#E34234",
+        "22997": "#E34234",
+        "27760": "#E34234"
       },
       "visible": true
     },
@@ -964,73 +960,26 @@
         }
       ],
       "segments": [
-        "13128",
-        "13409",
-        "13798",
-        "14697"
+        "13770",
+        "16224",
+        "20585",
+        "23790",
+        "26388",
+        "102536"
       ],
       "segmentColors": {
-        "13128": "#CC99FF",
-        "13409": "#CC99FF",
-        "13798": "#CC99FF",
-        "14697": "#CC99FF"
+        "13770": "#CC99FF",
+        "16224": "#CC99FF",
+        "20585": "#CC99FF",
+        "23790": "#CC99FF",
+        "26388": "#CC99FF",
+        "102536": "#CC99FF"
       },
       "visible": true
     },
     {
       "type": "segmentation",
       "name": "MANC_v1.2.3_ir_1_3",
-      "source": [
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
-          "subsources": {
-            "default": true,
-            "mesh": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
-          "subsources": {
-            "default": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
-          "subsources": {
-            "default": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
-          "enableDefaultSubsources": false
-        }
-      ],
-      "segments": [
-        "13975",
-        "14024",
-        "14954",
-        "19833",
-        "21189",
-        "21322",
-        "24181"
-      ],
-      "segmentColors": {
-        "13975": "#66CDAA",
-        "14024": "#66CDAA",
-        "14954": "#66CDAA",
-        "19833": "#66CDAA",
-        "21189": "#66CDAA",
-        "21322": "#66CDAA",
-        "24181": "#66CDAA"
-      },
-      "visible": true
-    },
-    {
-      "type": "segmentation",
-      "name": "MANC_v1.2.3_ir_1_4",
       "source": [
         {
           "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
@@ -1069,13 +1018,54 @@
         "23716"
       ],
       "segmentColors": {
-        "17567": "#FFD700",
-        "18156": "#FFD700",
-        "18253": "#FFD700",
-        "18629": "#FFD700",
-        "18990": "#FFD700",
-        "22868": "#FFD700",
-        "23716": "#FFD700"
+        "17567": "#66CDAA",
+        "18156": "#66CDAA",
+        "18253": "#66CDAA",
+        "18629": "#66CDAA",
+        "18990": "#66CDAA",
+        "22868": "#66CDAA",
+        "23716": "#66CDAA"
+      },
+      "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ir_1_4",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "21862",
+        "152655"
+      ],
+      "segmentColors": {
+        "21862": "#FFD700",
+        "152655": "#FFD700"
       },
       "visible": true
     },
@@ -1111,57 +1101,30 @@
         }
       ],
       "segments": [
-        "21862",
-        "152655"
+        "13128",
+        "13409",
+        "13798",
+        "13975",
+        "14024",
+        "14697",
+        "14954",
+        "19833",
+        "21189",
+        "21322",
+        "24181"
       ],
       "segmentColors": {
-        "21862": "#87CEEB",
-        "152655": "#87CEEB"
-      },
-      "visible": true
-    },
-    {
-      "type": "segmentation",
-      "name": "MANC_v1.2.3_ir_1_6",
-      "source": [
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
-          "subsources": {
-            "default": true,
-            "mesh": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
-          "subsources": {
-            "default": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
-          "subsources": {
-            "default": true
-          },
-          "enableDefaultSubsources": false
-        },
-        {
-          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
-          "enableDefaultSubsources": false
-        }
-      ],
-      "segments": [
-        "18724",
-        "19985",
-        "22997",
-        "27760"
-      ],
-      "segmentColors": {
-        "18724": "#FFA500",
-        "19985": "#FFA500",
-        "22997": "#FFA500",
-        "27760": "#FFA500"
+        "13128": "#87CEEB",
+        "13409": "#87CEEB",
+        "13798": "#87CEEB",
+        "13975": "#87CEEB",
+        "14024": "#87CEEB",
+        "14697": "#87CEEB",
+        "14954": "#87CEEB",
+        "19833": "#87CEEB",
+        "21189": "#87CEEB",
+        "21322": "#87CEEB",
+        "24181": "#87CEEB"
       },
       "visible": true
     }

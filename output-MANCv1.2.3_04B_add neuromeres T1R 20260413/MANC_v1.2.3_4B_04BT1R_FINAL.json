@@ -1151,6 +1151,45 @@
         "19114": "#66CDAA"
       },
       "visible": true
+    },
+    {
+      "type": "segmentation",
+      "name": "MANC_v1.2.3_ba",
+      "source": [
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2",
+          "subsources": {
+            "default": true,
+            "mesh": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/type_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/segment_properties_v1.2.3/tags_property/",
+          "subsources": {
+            "default": true
+          },
+          "enableDefaultSubsources": false
+        },
+        {
+          "url": "precomputed://gs://manc-seg-v1p2/manc-seg-v1.2/numeric_properties/",
+          "enableDefaultSubsources": false
+        }
+      ],
+      "segments": [
+        "20275"
+      ],
+      "segmentColors": {
+        "20275": "#FFD700"
+      },
+      "visible": true
     }
   ]
 }
