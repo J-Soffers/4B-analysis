@@ -1,0 +1,371 @@
+---
+title: "lin07Bmeshes"
+author: "Erika Dona-JHS adaptation"
+date: "2025-11-11"
+output: html_document
+---
+
+To check if kn-unc4 intersection labels 07B neurons only in the segments that we predict (T1 and T2) we will save meshes of 07B neurons from manc.
+
+#Set the environment
+```{r setEnvironment, purl=TRUE}
+
+
+
+#library(fancr)
+##install.packages("remotes") # only one time 
+#remotes::install_github("natverse/nat")# only one time 
+#remotes::install_github("natverse/nat.templatebrains")# only one time 
+library(nat)
+library(nat.templatebrains)
+library(tidyverse)
+#1remotes::install_github("natverse/malevnc") #one time only
+library(malevnc) 
+
+#options(nat.cmtk.bindir = "C:/cygwin64/usr/local/bin")#point windows to CMTK location. not required for mac
+
+options(nat.cmtk.bindir = "C:/cygwin64/usr/local/lib/cmtk/bin")
+Sys.setenv(PATH = paste(
+  "C:/cygwin64/bin",
+  Sys.getenv("PATH"),
+  sep = ";"
+))
+
+#test:
+nat::cmtk.bindir()
+cmtk.dof2mat(version = TRUE) #should say: "3.3.1"
+
+
+#test
+##list.files("C:/cygwin64/usr/local/lib/cmtk/bin")
+#list.files("C:/cygwin64/bin", pattern = "cyg")
+#Ensure cygwin isntalled these:
+#file.exists("C:/cygwin64/bin/cygwin1.dll")
+#file.exists("C:/cygwin64/bin/cyggomp-1.dll")
+#cygwin installer: expand menue (not pendign but full; Install fftw3 3.3.10-1 Install libfftw3_3 and all related packegers to fftw (fouier transforms)
+
+#library(wesanderson)
+#library(ggpattern)
+#library(ggbeeswarm)
+#library(cowplot)
+#library(dendextend)
+#library(magick)
+
+
+options(scipen = 999) # turns off scientific notation
+
+outdir <- here::here("output", "test")
+dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
+```
+
+```{r}
+VNCIS1=templatebrain("VNCIS1", dims = c(1024,768,163), voxdims = c(0.43,0.43,1), units = "microns")
+MANC_MANCsym <- here::here("v1/Common/registrations/MANC_MANCsym.list")
+MANCsym_VNCIS1 <- here::here("v1/Common/registrations/MANCsym_VNCIS1.list")
+
+safe_read_mesh <- function(x) {
+  tryCatch({
+    malevnc::read_manc_meshes(x)
+  }, error = function(e) {
+    message("Skipping missing mesh: ", x)
+    return(NULL)
+  })
+}
+
+safe_read_neuron <- function(x) {
+  tryCatch({
+    malevnc::manc_read_neurons(x)
+  }, error = function(e) {
+    message("Skipping missing neuron: ", x)
+    return(NULL)
+  })
+}
+
+neurons_to_nrrds <- function(bodyids = c(16856),
+                             refbrain = VNCIS1,
+                             via = MANC_MANCsym,
+                             reg = MANCsym_VNCIS1,
+                             direction = "forward",
+                             mesh = TRUE,
+                             filename = "neurons_to_nrrds.nrrd") {
+  
+  if (mesh) {
+    message("Reading meshes safely...")
+    ns <- lapply(bodyids, safe_read_mesh)
+    ns <- Filter(Negate(is.null), ns)
+    ns <- as.neuronlist(unlist(ns, recursive = FALSE))
+    ns <- ns / 1000
+  } else {
+    message("Reading neurons safely...")
+    ns <- lapply(bodyids, safe_read_neuron)
+    ns <- Filter(Negate(is.null), ns)
+    ns <- as.neuronlist(unlist(ns, recursive = FALSE))
+    ns <- ns / 125
+  }
+  
+  if (length(ns) == 0) {
+    stop("No valid neurons or meshes could be read. Aborting.")
+  }
+  
+  if (!is.null(via)) {
+    message("Applying via and final transformations...")
+    ns.symm <- xform(x = ns, reg = via, direction = direction)
+    ns.trans <- xform(x = ns.symm, reg = reg, direction = direction)
+  } else {
+    message("Applying single transformation...")
+    ns.trans <- xform(x = ns, reg = reg, direction = direction)
+  }
+  
+  im3 <- as.im3d(xyzmatrix(ns.trans), voxdims = refbrain)
+  write.im3d(im3, file = filename)
+}
+```
+
+```{r}
+#get token 
+Sys.setenv(NEUPRINT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imouc29mZmVyc0BnbWFpbC5jb20iLCJsZXZlbCI6Im5vYXV0aCIsImltYWdlLXVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tRb1JBeUdrdjJmNF9UUU1LOTBIMEk4Nm5xLXN4eE04ZXhCMzEwYlFPaEdSdGNiQT1zOTYtYz9zej01MD9zej01MCIsImV4cCI6MTk1MzkzMDg4MH0.CV5AhDlg_RhVAwmBEdabcDpgXaY9kJ1qxhAj8PVOe3Q")
+
+```
+
+
+```{r load manc metadata}
+# Load manc metadata
+Sys.getenv("NEUPRINT_TOKEN")
+malevnc::choose_malevnc_dataset("MANC")
+options(malevnc.neuprint_dataset="manc:v1.2.3")
+mancAnnotations <- malevnc::manc_neuprint_meta()
+```
+
+```{get4BcellID}
+
+T2_04B <- mancAnnotations %>%
+  filter(
+    hemilineage == "04B",
+    somaNeuromere == "T2",
+    grepl("secondary", birthtime)
+  )
+
+cat("Secondary T2 04B neurons:", nrow(T2_04B), "\n")
+
+T2_04B %>%
+  select(bodyid, type, instance, hemilineage, somaNeuromere, birthtime) %>%
+  print(n = Inf)
+
+
+
+
+subset on 07B neurons
+```{r}
+outdir <- here::here("output", "test")
+T107B <- mancAnnotations %>%
+dplyr::filter(hemilineage == "07B", somaNeuromere == "T1")
+neurons_to_nrrds(bodyids = T107B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc07BT1_meshes.nrrd"))
+```
+T2
+```{r}
+T207B <- mancAnnotations %>%
+  filter(hemilineage == "07B", somaNeuromere == "T2")
+neurons_to_nrrds(bodyids = T207B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc07BT2_meshes.nrrd"))
+```
+T3
+```{r}
+T307B <- mancAnnotations %>%
+  filter(hemilineage == "07B", somaNeuromere == "T3")
+neurons_to_nrrds(bodyids = T307B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc07BT3_meshes.nrrd"))
+```
+
+```{r}
+A07B <- mancAnnotations %>%
+  filter(hemilineage == "07B", grepl("A", somaNeuromere))
+neurons_to_nrrds(bodyids = A07B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc07BA_meshes.nrrd"))
+```
+
+#12A
+Also 12A is labelled by this intersection
+```{r}
+T112A <- mancAnnotations %>%
+  filter(hemilineage == "12A", somaNeuromere == "T1")
+neurons_to_nrrds(bodyids = T112A$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc12AT1_meshes.nrrd"))
+
+T212A <- mancAnnotations %>%
+  filter(hemilineage == "12A", somaNeuromere == "T2")
+neurons_to_nrrds(bodyids = T212A$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc12AT2_meshes.nrrd"))
+```
+#18B
+```{r}
+T118B <- mancAnnotations %>%
+  filter(hemilineage == "18B", somaNeuromere == "T1")
+neurons_to_nrrds(bodyids = T118B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT118B_meshes.nrrd"))
+                 
+T218B <- mancAnnotations %>%
+  filter(hemilineage == "18B", somaNeuromere == "T2")
+neurons_to_nrrds(bodyids = T218B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT218B_meshes.nrrd"))
+
+T318B <- mancAnnotations %>%
+  filter(hemilineage == "18B", somaNeuromere == "T3")
+neurons_to_nrrds(bodyids = T318B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT318B_meshes.nrrd"))                 
+```
+
+#23B
+```{r}
+T123B <- mancAnnotations %>%
+  filter(hemilineage == "23B", somaNeuromere == "T1")
+neurons_to_nrrds(bodyids = T123B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT123B_meshes.nrrd"))
+T223B <- mancAnnotations %>%
+  filter(hemilineage == "23B", somaNeuromere == "T2")
+neurons_to_nrrds(bodyids = T223B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT223B_meshes.nrrd"))                
+                 
+T323B <- mancAnnotations %>%
+  filter(hemilineage == "23B", somaNeuromere == "T3")
+neurons_to_nrrds(bodyids = T323B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT323B_meshes.nrrd"))
+```
+
+#03B
+Tk expression in secondary neurons should be specific for Abdominal segment on 03B neurons
+
+```{r}
+T103B <- mancAnnotations %>%
+  filter(hemilineage == "03B", somaNeuromere == "T1", grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T103B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT103B_meshes.nrrd"))
+T203B <- mancAnnotations %>%
+  filter(hemilineage == "03B", somaNeuromere == "T2",grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T203B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT203B_meshes.nrrd"))                
+                 
+T303B <- mancAnnotations %>%
+  filter(hemilineage == "03B", somaNeuromere == "T3",grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T303B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT303B_meshes.nrrd"))
+A03B <- mancAnnotations %>%
+  filter(hemilineage == "03B", grepl("A", somaNeuromere),grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = A03B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_manc03BA_meshes.nrrd"))                
+```
+
+#12B
+```{r}
+outdir <- "/Users/erikadona/Documents/Projects/RNAseq/NM_confocal_Jelly/meshes"
+T1_12B <- mancAnnotations %>%
+  filter(hemilineage == "12B", somaNeuromere == "T1", grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T1_12B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT1_12B_meshes.nrrd"))
+
+T2_12B <- mancAnnotations %>%
+  filter(hemilineage == "12B", somaNeuromere == "T2", grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T2_12B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT2_12B_meshes.nrrd"))
+
+T3_12B <- mancAnnotations %>%
+  filter(hemilineage == "12B", somaNeuromere == "T3", grepl("secondary", birthtime))
+neurons_to_nrrds(bodyids = T3_12B$bodyid,
+                 refbrain = VNCIS1,
+                 via = MANC_MANCsym,
+                 reg = MANCsym_VNCIS1,
+                 direction = "forward",
+                 mesh = TRUE,
+                 filename = file.path(outdir, "VNCIS1_mancT3_12B_meshes.nrrd"))
+```
+
