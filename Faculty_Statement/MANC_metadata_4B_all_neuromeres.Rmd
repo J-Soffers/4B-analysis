@@ -1,0 +1,248 @@
+---
+title: "lin07Bmeshes"
+author: "Erika Dona-JHS adaptation"
+date: "2025-11-11"
+output: html_document
+---
+
+To check if kn-unc4 intersection labels 07B neurons only in the segments that we predict (T1 and T2) we will save meshes of 07B neurons from manc.
+
+#Set the environment
+```{r setEnvironment, purl=TRUE}
+
+
+
+#library(fancr)
+##install.packages("remotes") # only one time 
+#remotes::install_github("natverse/nat")# only one time 
+#remotes::install_github("natverse/nat.templatebrains")# only one time 
+library(nat)
+library(nat.templatebrains)
+library(tidyverse)
+#1remotes::install_github("natverse/malevnc") #one time only
+library(malevnc) 
+
+#options(nat.cmtk.bindir = "C:/cygwin64/usr/local/bin")#point windows to CMTK location. not required for mac
+
+options(nat.cmtk.bindir = "C:/cygwin64/usr/local/lib/cmtk/bin")
+Sys.setenv(PATH = paste(
+  "C:/cygwin64/bin",
+  Sys.getenv("PATH"),
+  sep = ";"
+))
+
+#test:
+nat::cmtk.bindir()
+cmtk.dof2mat(version = TRUE) #should say: "3.3.1"
+
+
+#test
+##list.files("C:/cygwin64/usr/local/lib/cmtk/bin")
+#list.files("C:/cygwin64/bin", pattern = "cyg")
+#Ensure cygwin isntalled these:
+#file.exists("C:/cygwin64/bin/cygwin1.dll")
+#file.exists("C:/cygwin64/bin/cyggomp-1.dll")
+#cygwin installer: expand menue (not pendign but full; Install fftw3 3.3.10-1 Install libfftw3_3 and all related packegers to fftw (fouier transforms)
+
+#library(wesanderson)
+#library(ggpattern)
+#library(ggbeeswarm)
+#library(cowplot)
+#library(dendextend)
+#library(magick)
+
+options(scipen = 999) # turns off scientific notation
+
+outdir <- here::here("output", "test")
+dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
+```
+
+```{r}
+VNCIS1=templatebrain("VNCIS1", dims = c(1024,768,163), voxdims = c(0.43,0.43,1), units = "microns")
+MANC_MANCsym <- here::here("v1/Common/registrations/MANC_MANCsym.list")
+MANCsym_VNCIS1 <- here::here("v1/Common/registrations/MANCsym_VNCIS1.list")
+
+safe_read_mesh <- function(x) {
+  tryCatch({
+    malevnc::read_manc_meshes(x)
+  }, error = function(e) {
+    message("Skipping missing mesh: ", x)
+    return(NULL)
+  })
+}
+
+safe_read_neuron <- function(x) {
+  tryCatch({
+    malevnc::manc_read_neurons(x)
+  }, error = function(e) {
+    message("Skipping missing neuron: ", x)
+    return(NULL)
+  })
+}
+
+neurons_to_nrrds <- function(bodyids = c(16856),
+                             refbrain = VNCIS1,
+                             via = MANC_MANCsym,
+                             reg = MANCsym_VNCIS1,
+                             direction = "forward",
+                             mesh = TRUE,
+                             filename = "neurons_to_nrrds.nrrd") {
+  
+  if (mesh) {
+    message("Reading meshes safely...")
+    ns <- lapply(bodyids, safe_read_mesh)
+    ns <- Filter(Negate(is.null), ns)
+    ns <- as.neuronlist(unlist(ns, recursive = FALSE))
+    ns <- ns / 1000
+  } else {
+    message("Reading neurons safely...")
+    ns <- lapply(bodyids, safe_read_neuron)
+    ns <- Filter(Negate(is.null), ns)
+    ns <- as.neuronlist(unlist(ns, recursive = FALSE))
+    ns <- ns / 125
+  }
+  
+  if (length(ns) == 0) {
+    stop("No valid neurons or meshes could be read. Aborting.")
+  }
+  
+  if (!is.null(via)) {
+    message("Applying via and final transformations...")
+    ns.symm <- xform(x = ns, reg = via, direction = direction)
+    ns.trans <- xform(x = ns.symm, reg = reg, direction = direction)
+  } else {
+    message("Applying single transformation...")
+    ns.trans <- xform(x = ns, reg = reg, direction = direction)
+  }
+  
+  im3 <- as.im3d(xyzmatrix(ns.trans), voxdims = refbrain)
+  write.im3d(im3, file = filename)
+}
+```
+
+```{r}
+#get token 
+Sys.setenv(NEUPRINT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imouc29mZmVyc0BnbWFpbC5jb20iLCJsZXZlbCI6Im5vYXV0aCIsImltYWdlLXVybCI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tRb1JBeUdrdjJmNF9UUU1LOTBIMEk4Nm5xLXN4eE04ZXhCMzEwYlFPaEdSdGNiQT1zOTYtYz9zej01MD9zej01MCIsImV4cCI6MTk1MzkzMDg4MH0.CV5AhDlg_RhVAwmBEdabcDpgXaY9kJ1qxhAj8PVOe3Q")
+
+```
+
+
+```{r load manc metadata all birthtimes}
+# ============================================================
+# LOAD MANC METADATA
+# SAVE 04B T1/T2/T3 x LEFT/RIGHT
+# ============================================================
+
+library(malevnc)
+library(dplyr)
+
+malevnc::choose_malevnc_dataset("MANC")
+options(malevnc.neuprint_dataset = "manc:v1.2.3")
+
+mancAnnotations <- malevnc::manc_neuprint_meta()
+
+
+# ============================================================
+# SETTINGS
+# ============================================================
+
+neuromeres <- c("T1", "T2", "T3")
+
+# Check exactly how side is encoded in MANC
+#print(
+  #mancAnnotations %>%
+#    filter(hemilineage == "04B") %>%
+ #   count(somaNeuromere, somaSide)
+#)
+
+
+ # somaNeuromere somaSide  n
+  #          T1      LHS 97
+    #        T1      RHS 98
+   #         T2      LHS 92
+     #       T2      RHS 95
+     #       T3      LHS 89
+     #      T3      RHS 91
+
+
+# ============================================================
+# LOOP THROUGH T1/T2/T3
+# ============================================================
+
+for (seg in neuromeres) {
+
+   # ----------------------------------------------------------
+  # LEFT
+  # ----------------------------------------------------------
+
+  left_04B <- mancAnnotations %>%
+    filter(
+      hemilineage == "04B",
+      somaNeuromere == seg,
+      somaSide == "LHS"
+    )
+
+  cat(
+    "\n====================================\n",
+    seg, " 04B LEFT\n",
+    "Neurons: ", nrow(left_04B), "\n",
+    "====================================\n",
+    sep = ""
+  )
+
+  print(
+    table(
+      left_04B$birthtime,
+      useNA = "ifany"
+    )
+  )
+
+  write.csv(
+    left_04B,
+    paste0(
+      "MANC_",
+      seg,
+      "_04B_left_metadata.csv"
+    ),
+    row.names = FALSE
+  )
+
+
+  # ----------------------------------------------------------
+  # RIGHT
+  # ----------------------------------------------------------
+
+  right_04B <- mancAnnotations %>%
+    filter(
+      hemilineage == "04B",
+      somaNeuromere == seg,
+      somaSide == "RHS"
+    )
+
+  cat(
+    "\n====================================\n",
+    seg, " 04B RIGHT\n",
+    "Neurons: ", nrow(right_04B), "\n",
+    "====================================\n",
+    sep = ""
+  )
+
+  print(
+    table(
+      right_04B$birthtime,
+      useNA = "ifany"
+    )
+  )
+
+  write.csv(
+    right_04B,
+    paste0(
+      "MANC_",
+      seg,
+      "_04B_right_metadata.csv"
+    ),
+    row.names = FALSE
+  )
+}
+
+```
